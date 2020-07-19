@@ -1,20 +1,26 @@
 <?php
 
-include 'db.php';
-include 'header.php';
+include 'view/header.php';
+
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 } else {
     $page = 'home';
 }
 
-if ($page == 'folder') {
-    include 'folder.php';
-} else if ($page == 'edit') {
-    include 'masterdata/edit.php';
+if (isset($_GET['p'])) {
+    $parent = $_GET['p'];
 } else {
-    include 'folder.php';
+    $parent = 'null';
 }
-include 'footer.php';
+
+if ($page == 'home') {
+    include 'view/home.php';
+} else if ($page == 'edit') {
+    include 'view/edit.php';
+} else {
+    include 'view/home.php';
+}
+include 'view/footer.php';
 
 ?>
