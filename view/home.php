@@ -4,6 +4,10 @@
         
         $controller = new FolderController();
         $obj = $controller->listar();
+
+        if (mysqli_num_rows($obj) == 0) {
+            echo('<label>Não existe nenhuma pasta.</label>');
+        }
         
         while($row = mysqli_fetch_array($obj))
         {
