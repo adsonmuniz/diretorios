@@ -6,7 +6,7 @@ body{
 
 header{
     height: 80px; 
-    background-color: aquamarine; 
+    background-color: turquoise; 
     border-radius: 0.5em; 
     margin: 5px;
     position: relative;
@@ -15,6 +15,22 @@ header{
 #logo{
     padding-top: 8px;
     align-content: flex-start;
+}
+
+#menu {
+    top: 3%;
+    right:5%;
+    position: fixed;
+    background-color: darkcyan;
+    color: whitesmoke;
+    padding: 0.5em 0.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0.5em;
+}
+
+#menu:hover {
+    background-color: rgb(33, 167, 153);
 }
 
 header h1{
@@ -27,7 +43,7 @@ header h1{
 footer{
     height: 20px;
     width: 99%;
-    background-color: cadetblue;
+    background-color: turquoise;
     border-radius: 0.5em; 
     margin: 5px;
     padding-top: 10px;
@@ -43,7 +59,7 @@ footer{
 a.button {
     background-color: darkcyan;
     color: whitesmoke;
-    padding: 1em 1.4em;
+    padding: 1em 1em;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -55,7 +71,7 @@ a.button:hover {
 #btn_add_folder {
     bottom: 40px;
     right: 0;
-    margin: 10px; 
+    margin: 20px; 
     position: fixed;
 }
 
@@ -81,37 +97,55 @@ a.button:hover {
 
 #content input[type|="text"] {
     color: teal;
-    padding: 1em 1.4em;
+    padding: 1em 1em;
     text-decoration: none;
-    text-transform: uppercase;
-    width: 200px;
+    width: 150px;
 }
 
 #content input[type|="submit"] {
     background-color: darkcyan;
     color: whitesmoke;
-    padding: 1em 1.4em;
+    padding: 1em 1em;
     text-decoration: none;
     text-transform: uppercase;
     width: 120px;
 }
 
-.item input[type|="button"] {
-    background-color: burlywood;
-    color: darkslategray;
+#content input[type|="submit"]:hover {
+    background-color: turquoise;
+}
+
+#content input[type|="button"] {
+    background-color: darkcyan;
+    color: whitesmoke;
+    padding: 1em 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 120px;
+}
+
+#content input[type|="button"]:hover {
+    background-color: turquoise;
+}
+
+.item a.button {
+    background-color: darkcyan;
+    color: whitesmoke;
     padding: 0.3em 0.3em;
     text-decoration: none;
     text-transform: uppercase;
     width: 80px;
+    margin: 10px;
 }
 
-.item input[type|="button"]:hover {
+.item a.button:hover {
     background-color: turquoise;
 }
 
 .items {
     border: solid 1px;
     margin: 20px;
+    padding: 10px;
 }
 
 .item {

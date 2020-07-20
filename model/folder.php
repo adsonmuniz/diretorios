@@ -37,31 +37,35 @@ class Folder {
     public function save() {
         $query = "INSERT INTO folder (id_parent, name) VALUES ('$this->id_parent','$this->name')";
         $resultQuery = mysqli_query($this->connection(),$query);
+        return $resultQuery;
     }
     
     // logica para atualizar a pasta no banco
     public function update() {
         $query = "UPDATE folder SET name = '$this->name' WHERE id='$this->id'";
         $resultQuery = mysqli_query($this->connection(),$query);
+        return $resultQuery;
     }
     
     // logica para remover a pasta do banco
     public function remove() {
         $query = "DELETE FROM folder WHERE id='$this->id'";
         $resultQuery = mysqli_query($this->connection(),$query);
+        return $resultQuery;
     }
     
     // logica para listar todos pastas raízes do banco
     public function listAll() {
-        $query = "SELECT * FROM folder WHERE id_parent IS NULL";
+        $query = "SELECT * FROM folder WHERE id_parent IS NULL OR id_parent = 0 order by name";
         $resultQuery = mysqli_query($this->connection(),$query);
         return $resultQuery;
     }
     
     // logica para listar todos pastas raízes do banco
     public function listAllChildrens() {
-        $query = "SELECT * FROM folder WHERE id_parent = '$this->id_parent'";
+        $query = "SELECT * FROM folder WHERE id_parent = '$this->id' order by name";
         $resultQuery = mysqli_query($this->connection(),$query);
+        return $resultQuery;
     }
 
     // Connection
