@@ -11,5 +11,3 @@ Necessário instalar os programas:
 4) Fazer o download do ZIP do projeto em "https://github.com/adsonmuniz/diretorios". Na pasta "../xampp/htdocs/" colar o conteúdo do download, renomeando a pasta de "diretorios-master" para "diretorios".
 5) No terminal do navegador, digitar e abrir o caminho "localhost/phpMyAdmin", inserir o usuário root e Executar. No menu superior, clicar na guiar SQL, copiar e colar o conteúdo do arquivo "../diretorios/scripts/scripts_create.sql" do projeto. Por fim, execute o código SQL.
 6) Pronto, agora no navegador digite "localhost/diretorios".
-
-
