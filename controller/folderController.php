@@ -5,15 +5,17 @@ if (isset($_POST['nomePasta']) || isset($_POST['editPasta']) || isset($_POST['de
     require_once 'model/folder.php';
 }
   
-class FolderController {
- 
-    public function listar() {
+class FolderController
+{
+    public function listar()
+    {
         $folder = new Folder();
         $folders = $folder->listAll();
         return $folders;
     }
 
-    public function listarFilhos($p) {
+    public function listarFilhos($p)
+    {
         $folder = new Folder();
         $folder->setId($p);
 
@@ -21,7 +23,8 @@ class FolderController {
         return $folders;
     }
 
-    public function inserir() {
+    public function inserir()
+    {
         $folder = new Folder();
         $f = addslashes($_POST['nomePasta']);
         $ip = $_POST['idPai'];
@@ -33,7 +36,8 @@ class FolderController {
         return $result;
     }
 
-    public function editar() {
+    public function editar()
+    {
         $folder = new Folder();
         $f = addslashes($_POST['editPasta']);
         $i = $_POST['idPasta'];
@@ -46,7 +50,8 @@ class FolderController {
 
     }
 
-    public function deletar() {
+    public function deletar()
+    {
         $folder = new Folder();
         $i = $_POST['idPasta'];
 
@@ -63,7 +68,6 @@ if (isset($_POST['nomePasta'])) {
     $ip = $_POST['idPai'];
     $obj = $classFolderController->inserir();
     
-    //echo("<script>console.log('Debug Objects: " . $obj . "' );</script>");
     if ($ip == 'null' || $ip == 0) {
         header('location:../index.php?page=home');
     } else {
@@ -86,5 +90,3 @@ if (isset($_POST['nomePasta'])) {
         header('location:../index.php?page=child&p='.$ip);
     }
 }
-
-?>

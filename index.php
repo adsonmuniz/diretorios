@@ -23,5 +23,3 @@ if ($page == 'home') {
 }
 
 include 'view/footer.php';
-
-?>

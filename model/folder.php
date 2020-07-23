@@ -1,6 +1,7 @@
 <?php
 
-class Folder {
+class Folder 
+{
     private $id;
     private $id_parent;
     private $name;
@@ -8,61 +9,71 @@ class Folder {
     /**
      * getters e setters
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function setId($identity) {
+    public function setId($identity)
+    {
         $this->id = $identity;
     }
 
-    public function getIdParent() {
+    public function getIdParent()
+    {
         return $this->id_parent;
     }
 
-    public function setIdParent($identity) {
+    public function setIdParent($identity)
+    {
         $this->id_parent = $identity;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function setName($nome) {
+    public function setName($nome)
+    {
         $this->name = $nome;
     }
 
-    
     // logica para listar todos pastas raízes do banco
-    public function listAll() {
+    public function listAll()
+    {
         $query = "SELECT * FROM folder WHERE id_parent IS NULL OR id_parent = 0 order by name";
         $resultQuery = mysqli_query($this->connection(),$query);
         return $resultQuery;
     }
     
     // logica para listar todos pastas raízes do banco
-    public function listAllChildrens() {
+    public function listAllChildrens()
+    {
         $query = "SELECT * FROM folder WHERE id_parent = '$this->id' order by name";
         $resultQuery = mysqli_query($this->connection(),$query);
         return $resultQuery;
     }
 
     // logica para salvar a pasta no banco
-    public function save() {
+    public function save()
+    {
         $query = "INSERT INTO folder (id_parent, name) VALUES ('$this->id_parent','$this->name')";
         $resultQuery = mysqli_query($this->connection(),$query);
         return $resultQuery;
     }
     
     // logica para atualizar a pasta no banco
-    public function update() {
+    public function update()
+    {
         $query = "UPDATE folder SET name = '$this->name' WHERE id='$this->id'";
         $resultQuery = mysqli_query($this->connection(),$query);
         return $resultQuery;
     }
     
     // logica para remover a pasta e suas sub-pastas do banco
-    public function remove() {
+    public function remove()
+    {
         $arrayIds = array();
         array_push($arrayIds, $this->id);
 
@@ -84,7 +95,8 @@ class Folder {
     }
 
     // Connection
-    public function connection() {
+    private function connection()
+    {
         $server = "localhost";
         $user = "root";
         $password = "";
@@ -106,4 +118,3 @@ class Folder {
     
     }
 }
-?>

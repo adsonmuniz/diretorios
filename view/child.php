@@ -25,4 +25,4 @@
         echo('</div>
     <a id="btn_add_folder" class="button" href="?page=create&p='.$parent.'">Adicionar</a>
     <input type="button" value="Voltar" onClick="JavaScript: window.history.back();">');
-?>
+    ?>
