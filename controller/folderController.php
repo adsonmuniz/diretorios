@@ -23,7 +23,7 @@ class FolderController {
 
     public function inserir() {
         $folder = new Folder();
-        $f = $_POST['nomePasta'];
+        $f = addslashes($_POST['nomePasta']);
         $ip = $_POST['idPai'];
 
         $folder->setName($f);
@@ -35,7 +35,7 @@ class FolderController {
 
     public function editar() {
         $folder = new Folder();
-        $f = $_POST['editPasta'];
+        $f = addslashes($_POST['editPasta']);
         $i = $_POST['idPasta'];
 
         $folder->setName($f);
