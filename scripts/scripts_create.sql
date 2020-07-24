@@ -1,4 +1,6 @@
-CREATE SCHEMA 'directories';
+CREATE SCHEMA directories;
+
+use directories;
 
 CREATE TABLE folder
 (
